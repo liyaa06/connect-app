@@ -3,22 +3,8 @@
 // seperti mengelola state (useState) dan merespons klik dari pengguna (onClick).
 // Ini penting karena kita punya sidebar yang bisa dibuka-tutup.
 "use client";
-
-// --- IMPORTS ---
-// Di sini kita mengimpor semua "bahan" yang kita butuhkan.
-
-// Mengimpor 'useState' dari React. Ini adalah "Hook" yang memungkinkan
-// komponen kita untuk "mengingat" sesuatu. Dalam kasus ini, kita akan menggunakannya
-// untuk mengingat apakah sidebar sedang terbuka atau tertutup.
 import { useState } from "react";
-
-// Mengimpor komponen 'Link' dari Next.js.
-// 'Link' ini cerdas, ia membuat perpindahan antar halaman terasa cepat
-// tanpa perlu me-reload seluruh halaman, sehingga pengalaman pengguna lebih baik.
 import Link from "next/link";
-
-// Mengimpor berbagai ikon dari library '@tabler/icons-react'.
-// Menggunakan library ikon membuat tampilan aplikasi lebih menarik dan profesional.
 import {
   IconLogout2,
   IconNews,
@@ -30,19 +16,8 @@ import {
   IconMenu2,
   IconX,
 } from "@tabler/icons-react";
-
-// --- KOMPONEN UTAMA ---
-// Ini adalah komponen utama kita. 'AdminLayout' akan membungkus halaman-halaman lain.
 export default function AdminLayout({ children }) {
-  // Di sinilah kita menggunakan 'useState'.
-  // 'isSidebarOpen' adalah variabel yang menyimpan kondisi (true/false).
-  // 'setSidebarOpen' adalah fungsi untuk mengubah nilai 'isSidebarOpen'.
-  // Nilai awalnya adalah 'false', artinya sidebar tertutup saat halaman pertama kali dimuat.
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-
-  // Ini adalah cara yang rapi untuk menyimpan daftar link navigasi.
-  // Kita membuat sebuah array of objects. Setiap object berisi data untuk satu link.
-  // Jika nanti ingin menambah menu baru, cukup tambahkan satu object lagi di sini.
   const navLinks = [
     { href: "/admin/dashboard", icon: <IconHome />, label: "Dashboard" },
     { href: "/admin/users", icon: <IconUser />, label: "User" },

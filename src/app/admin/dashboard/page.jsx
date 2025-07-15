@@ -79,39 +79,4 @@ const Dashboard = () => {
 
 export default Dashboard;
 
-/*
-Penjelasan Kode:
 
-1.  'use client': Directive ini menandakan bahwa komponen ini adalah Client Component, yang berarti berjalan di browser dan dapat menggunakan hooks seperti useState, useEffect, dll.
-
-2.  Import library:
-    *   useSWR: Hook untuk mengambil data (fetching) dengan mudah, termasuk fitur caching dan revalidasi otomatis.
-    *   IconUsers, IconNews, IconFileText: Ikon-ikon dari library @tabler/icons-react untuk mempercantik tampilan.
-
-3.  fetcher: Fungsi pembantu untuk melakukan fetching data menggunakan fetch API bawaan browser. Mengubah respons menjadi JSON.
-
-4.  Komponen Dashboard: Komponen utama yang menampilkan dashboard.
-    *   Fetching data:
-        *   useSWR('URL_data_users', fetcher): Mengambil data pengguna dari API. Mengembalikan objek yang berisi data, error, dan status loading.
-        *   useSWR('URL_data_berita', fetcher): Mengambil data berita dari API. Mengembalikan objek serupa.
-    *   Pengolahan data:
-        *   totalUsers: Menghitung jumlah pengguna dari data yang diambil.
-        *   totalNews: Menghitung jumlah berita.
-        *   latestNews: Mengambil artikel berita terbaru (artikel pertama dalam array).
-    *   Penanganan status:
-        *   isLoading: True jika salah satu permintaan masih berlangsung.
-        *   error: Berisi error jika ada salah satu permintaan gagal.
-    *   Rendering:
-        *   Jika isLoading: Menampilkan pesan "Loading...".
-        *   Jika error: Menampilkan pesan "Failed to load data.".
-        *   Jika berhasil: Menampilkan dashboard dengan informasi jumlah pengguna, jumlah berita, dan judul berita terbaru.
-
-5.  Tampilan (JSX): Menggunakan elemen-elemen HTML dan komponen-komponen dari library untuk menyusun tampilan dashboard:
-    *   Judul "Admin Dashboard"
-    *   Kartu informasi untuk:
-        *   Total Pengguna: Menampilkan ikon pengguna dan jumlah pengguna.
-        *   Total Berita: Menampilkan ikon berita dan jumlah berita.
-        *   Berita Terbaru: Menampilkan ikon file dan judul berita terbaru.
-    *   Styling: Menggunakan class-class dari Tailwind CSS untuk styling (warna, jarak, bayangan, dll.).
-
-*/

@@ -80,32 +80,4 @@ export default function UserPage() {
   );
 }
 
-/*
-Note Belajar (Bagian Penting):
 
-1.  'use client': Menandakan ini adalah "Client Component". Wajib digunakan jika kamu ingin
-    memakai hooks seperti `useSWR` yang berinteraksi dengan browser (misalnya untuk fetching data).
-
-2.  useSWR('URL', fetcher): Ini adalah "jantung" dari pengambilan data di halaman ini.
-    -   `useSWR`: Hook (fungsi khusus) dari library SWR yang membuat pengambilan data jadi sangat mudah.
-    -   `'https://jsonplaceholder.typicode.com/users'`: Alamat API tempat kita mengambil data daftar pengguna.
-    -   `fetcher`: Fungsi sederhana yang kita buat untuk memberitahu SWR bagaimana cara mengambil data (yaitu dengan `fetch`).
-    -   `{ data: users, error, isLoading }`: `useSWR` secara otomatis memberikan tiga variabel status yang sangat berguna:
-        - `isLoading`: Benar/Salah, apakah data masih dalam proses diambil?
-        - `error`: Benar/Salah, apakah ada error saat mengambil data?
-        - `data`: Jika berhasil, data dari API akan ada di sini. Kita menamainya `users` agar lebih mudah dibaca.
-
-3.  if (isLoading) / if (error): Ini disebut "Conditional Rendering" (Tampilan Bersyarat).
-    - Ini adalah praktik terbaik untuk memberikan pengalaman yang baik bagi pengguna.
-    - Daripada menampilkan halaman kosong, kita tampilkan pesan "Loading..." atau "Gagal memuat data".
-
-4.  users.map((user) => ...): Ini adalah cara standar di React untuk menampilkan sebuah daftar (list).
-    - `.map()` akan "mengunjungi" setiap objek pengguna di dalam array `users`.
-    - Untuk setiap `user`, kita merender (menampilkan) satu komponen `<UserCard>`.
-
-5.  <UserCard key={...} title={...} ... />:
-    - Ini adalah cara kita menggunakan komponen lain (`UserCard`) dan mengirimkan data ke dalamnya.
-    - Data ini disebut "props". Jadi, kita mengirim `name` dari API sebagai prop `title` ke komponen `UserCard`.
-    - `key={user.id}`: Ini sangat penting. React butuh `key` yang unik untuk setiap item di dalam list agar bisa mengelola list dengan efisien, terutama saat ada perubahan data.
-
-*/

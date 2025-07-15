@@ -45,37 +45,3 @@ const AboutApp = () => {
 
 export default AboutApp;
 
-/*
-Note Belajar (Bagian Penting):
-
-1.  Komponen Statis (Server Component): Halaman ini adalah contoh "Server Component"
-    yang sempurna. Kenapa? Karena isinya hanya menampilkan informasi (statis) dan tidak
-    memerlukan interaksi dari pengguna (seperti klik tombol yang mengubah sesuatu).
-    Karena itu, kita tidak perlu menulis `'use client'` di bagian atas.
-
-2.  Struktur JSX: Kode di dalam `return` adalah JSX. Ini adalah cara kita menulis
-    struktur HTML langsung di dalam file JavaScript. Ini membuat pembuatan tampilan
-    menjadi lebih mudah dan terintegrasi.
-
-3.  Styling dengan Tailwind CSS: Semua `className="..."` adalah kelas dari Tailwind CSS.
-    Ini adalah cara modern untuk memberi gaya pada komponen tanpa menulis file CSS
-    terpisah. Contohnya:
-    -   `p-10`: Memberi `padding` (jarak di dalam) sebesar 10 unit.
-    -   `font-bold`: Membuat teks menjadi tebal.
-    -   `grid`, `grid-cols-3`, `gap-6`: Membuat layout berbentuk grid (tabel)
-        dengan 3 kolom (di layar medium ke atas) dan jarak antar kolom.
-    -   `rounded-lg`, `shadow-sm`: Memberi sudut melengkung dan sedikit bayangan.
-
-4.  Menggunakan Komponen Ikon:
-    -   `import { ... } from '@tabler/icons-react'`: Kita mengimpor komponen ikon dari
-        sebuah library.
-    -   `<IconInfoCircle size={48} ... />`: Kita menggunakan ikon tersebut seolah-olah
-        itu adalah tag HTML biasa. Kita bisa mengoper "props" (properti) seperti `size`
-        untuk mengatur ukuran dan `className` untuk mengatur warna atau jarak.
-
-5.  Layout Responsif: Perhatikan `md:grid-cols-3`. Ini adalah contoh desain
-    responsif. Artinya, di layar kecil (mobile), kartu akan tersusun ke bawah
-    (1 kolom). Tapi di layar medium (`md`) atau lebih besar, layout akan berubah
-    menjadi 3 kolom.
-
-*/
